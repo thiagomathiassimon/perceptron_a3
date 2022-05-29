@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="perceptron.js"></script>
+    <script src="script.js"></script>
+    <link
+      rel="shortcut icon"
+      href="assets/cute_robot.png"
+      type="image/x-icon"
+    />
+    <title>Exemplo_A3</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>Formação de Frases</h1>
+    </header>
+    <div>
+      <div class="container">
+        <div class="question">Question 1</div>
+        <div class="statement">
+          Seleciona as opções que completem <strong>CORRETAMENTE</strong> a
+          frase:
+        </div>
+        <div class="phrase">
+          <strong class="space">_____________</strong> the accident
+          <strong class="space">_____________</strong>
+          last night?
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="answer">
+        <div class="spaceTitle">
+          Space One
+          <input
+            type="radio"
+            name="space1"
+            value="1"
+            class="radioInput"
+            id="did"
+            onclick="setValue1(this.value)"
+          />
+          <label for="did" class="option">Did</label>
+          <input
+            type="radio"
+            name="space1"
+            value="0"
+            class="radioInput"
+            id="was"
+            onclick="setValue1(this.value)"
+          />
+          <label for="was" class="option">Was</label>
+          <input
+            type="radio"
+            name="space1"
+            value="0"
+            class="radioInput"
+            id="have"
+            onclick="setValue1(this.value)"
+          />
+          <label for="have" class="option">Have</label>
+        </div>
+        <div class="spaceTitle">
+          Space Two
+          <input
+            type="radio"
+            name="space2"
+            value="0"
+            class="radioInput"
+            id="happening"
+            onclick="setValue2(this.value)"
+          />
+          <label for="happening" class="option">happening</label>
+          <input
+            type="radio"
+            name="space2"
+            value="1"
+            class="radioInput"
+            id="happen"
+            onclick="setValue2(this.value)"
+          />
+          <label for="happen" class="option">happen</label>
+          <input
+            type="radio"
+            name="space2"
+            value="0"
+            class="radioInput"
+            id="happened"
+            onclick="setValue2(this.value)"
+          />
+          <label for="happened" class="option">happened</label>
+        </div>
+      </div>
+      <div id="answerQuestionDiv">
+        <button id="answerQuestion" onclick="onCheckAnswer()">
+          Answer Question
+        </button>
+      </div>
+    </div>
+    <footer>
+      <div class="dialog">
+        <div class="hidden" id="result"></div>
+        <div class="help">
+          <div class="hidden" id="helpText">
+            Tip: Use to happen – interrogative form
+          </div>
+        </div>
+      </div>
+      <img
+        src="assets/cute_robot.png"
+        alt="cute_robot"
+        id="cute_robot"
+        onclick="showHelpText('helpText')"
+      />
+    </footer>
+  </body>
+</html>
